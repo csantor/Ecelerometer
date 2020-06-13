@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Ecelerometer</string>
+    <string name="x_axis">X-axis</string>
+    <string name="y_axis">Y-axis</string>
+    <string name="z_axis">Z-axis</string>
+    <string name="zero">0</string>
+    <string name="start">start</string>
+    <string name="reset">reset</string>
+    <string name="stop">stop</string>
+    <string name="Activity">Δραστηριότητα</string>
+</resources>

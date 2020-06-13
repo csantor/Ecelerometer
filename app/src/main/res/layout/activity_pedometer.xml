@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_pedometer"
+    android:padding="5dp"
+    android:stretchColumns="1,2,3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.christodoulos.myapplication.Pedometer">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:text="@string/x_axis"
+            android:textColor="#33B5E5"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_gravity="center"
+            android:text="@string/y_axis"
+            android:textColor="#33B5E5" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_gravity="center"
+            android:text="@string/z_axis"
+            android:textColor="#33B5E5" />
+
+    </TableRow>
+
+    <TableRow android:id="@+id/tableRow1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textViewX"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_column="1"
+        android:layout_gravity="center"
+        android:textColor="#33B5E5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:textColor="#33B5E5"
+        android:layout_column="2"
+        android:id="@+id/textViewY" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:textColor="#33B5E5"
+        android:layout_column="3"
+        android:id="@+id/textViewZ" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageButton
+            android:id="@+id/timeButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/timer"
+            android:layout_column="1"
+            android:background="@null"
+            android:layout_gravity="center"
+            android:onClick="showTimeMessage"
+            tools:ignore="ContentDescription"/>
+
+        <ImageButton
+            android:id="@+id/stepsButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/steps"
+            android:layout_column="2"
+            android:background="@null"
+            android:onClick="showStepsMessage"
+            tools:ignore="ContentDescription"/>
+
+        <ImageButton
+            android:id="@+id/distanceButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/distance"
+            android:layout_column="3"
+            android:background="@null"
+            android:onClick="showDistanceMessage"
+            tools:ignore="ContentDescription"/>
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Chronometer
+            android:id="@+id/clock1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:textColor="#33B5E5"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/textSteps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:text="@string/zero"
+            android:textColor="#33B5E5"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/textDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:text="@string/zero"
+            android:textColor="#33B5E5"
+            android:textSize="40sp" />
+
+    </TableRow>
+
+
+
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/buttonStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="startChronometer"
+            android:text="@string/start"
+            android:layout_column="1"/>
+
+        <Button
+            android:id="@+id/buttonReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="resetSteps"
+            android:text="@string/reset"
+            android:layout_column="2"/>
+
+        <Button
+            android:id="@+id/buttonStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="stopChronometer"
+            android:text="@string/stop"
+            android:layout_column="3"/>
+
+    </TableRow>
+    <com.jjoe64.graphview.GraphView
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:id="@+id/graph" />
+    <Button
+        android:id="@+id/buttonResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Show Results" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical|center_horizontal">
+        <TextView
+            android:id="@+id/textViewUserActivity"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/Activity"
+            android:textColor="#33B5E5"
+            android:textSize="40sp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+
+
+</TableLayout>
+</ScrollView>
+
+
